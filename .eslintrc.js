@@ -24,7 +24,7 @@ module.exports = {
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'ts', 'tsx'] }],
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
     'no-use-before-define': 'off',
     'react/jsx-props-no-spreading': ['warn'],
 

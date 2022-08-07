@@ -1,6 +1,6 @@
-import { CommonActions, StackActions, useNavigation } from '@react-navigation/native';
+import { StackActions, useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Button, Text, View } from 'react-native';
 import { BranchStackParamList, RootStackParamList } from '../../App';
 

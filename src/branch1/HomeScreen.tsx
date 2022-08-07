@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useEffect } from 'react';
 import { Button, Text, View } from 'react-native';
-import { BranchStackParamList, RootStackParamList } from '../../App';
+import { BranchStackParamList } from '../../App';
 
 interface IProps {
   extraData: string;

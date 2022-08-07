@@ -1,7 +1,6 @@
 import { NavigationContainer, NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import HomeScreen from './src/branch1/HomeScreen';
 import MainHome from './src/MainHome';
 import NavBranch1 from './src/navigator/NavBranch1';
 
