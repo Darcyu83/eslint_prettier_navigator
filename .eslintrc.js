@@ -21,19 +21,32 @@ module.exports = {
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'no-use-before-define': 'off',
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'ts', 'tsx'] }],
+    'no-unused-vars': 'warn',
+    'no-use-before-define': 'warn',
+    'react/jsx-props-no-spreading': ['warn'],
+
     camelcase: 'error',
     'spaced-comment': 'error',
     quotes: ['error', 'single'],
     'no-duplicate-imports': 'error',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'ts', 'tsx'] }],
     'react/function-component-definition': [
       2,
       {
-        namedComponents: ['function-declaration', 'function-expression', 'arrow-function'],
+        namedComponents: ['function-declaration', 'function-expression'],
         unnamedComponents: 'arrow-function',
+      },
+    ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
   },
@@ -42,4 +55,4 @@ module.exports = {
       typescript: {},
     },
   },
-}
+};
