@@ -16,12 +16,8 @@ function MainHome({ extraData }: IProps) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Main Home == {extraData}</Text>
-      <Button
-        title='Go to Screen1'
-        onPress={() => navigation.navigate('HomeBranch1', { screen: 'HomeScreen' })}
-      />
-      <Button title='Go to Screen2' onPress={() => navigation.navigate('HomeBranch2')} />
-      <Button title='Go to Screen3' onPress={() => navigation.navigate('HomeBranch3')} />
+      <Button title='Go to Profile' onPress={() => navigation.navigate('Profile')} />
+      <Button title='Go to Settings' onPress={() => navigation.navigate('Settings')} />
     </View>
   );
 }

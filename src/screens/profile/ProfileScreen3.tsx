@@ -2,21 +2,21 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useEffect } from 'react';
 import { Button, Text, View } from 'react-native';
-import { BranchStackParamList } from '../../App';
+import { ProfileStackParams } from '../../navigator/ProfileStackNav';
 
 interface IProps {}
 
-function Screen3({}: IProps) {
-  const navigation = useNavigation<NativeStackScreenProps<BranchStackParamList>['navigation']>();
+function ProfileScreen3({}: IProps) {
+  const navigation = useNavigation<NativeStackScreenProps<ProfileStackParams>['navigation']>();
   useEffect(() => () => {
-    console.log('Screen3 detroyed');
+    console.log('ProfileScreen3 detroyed');
   });
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen3 in branch1</Text>
+      <Text>ProfileScreen3 in branch1</Text>
       <Button title='Go to Details' onPress={() => navigation.navigate('Details', { pushed: 0 })} />
     </View>
   );
 }
 
-export default Screen3;
+export default ProfileScreen3;

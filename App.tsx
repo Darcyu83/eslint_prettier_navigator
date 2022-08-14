@@ -1,37 +1,37 @@
-import { NavigationContainer, NavigatorScreenParams } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import MainHome from './src/MainHome';
-import NavBranch1 from './src/navigator/NavBranch1';
+
+import ProfileStackNav from './src/navigator/ProfileStackNav';
+import SettingsStackNav from './src/navigator/SettingsStackNav';
+import TabNav from './src/navigator/TabNav';
 
 interface IProps {}
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+export const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
   MainHome: undefined;
-  HomeBranch1: NavigatorScreenParams<BranchStackParamList>;
-  HomeBranch2: undefined;
-  HomeBranch3: undefined;
+  Profile: undefined;
+  Settings: undefined;
 };
 
-export type BranchStackParamList = {
-  HomeScreen: undefined;
-  Details: { pushed: number };
-  Screen1: undefined;
-  Screen2: undefined;
-  Screen3: undefined;
-  PushedScreen: undefined;
-};
 function App({}: IProps) {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='MainHome'>
-          {(props) => <MainHome {...props} extraData='extraData' />}
-        </Stack.Screen>
-        <Stack.Screen name='HomeBranch1' component={NavBranch1} />
-      </Stack.Navigator>
+      <RootStack.Navigator>
+        <RootStack.Screen name='MainHome' component={TabNav} />
+        <RootStack.Screen
+          name='Profile'
+          component={ProfileStackNav}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name='Settings'
+          component={SettingsStackNav}
+          options={{ headerShown: false }}
+        />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 }

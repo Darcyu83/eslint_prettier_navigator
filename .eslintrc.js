@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'react/react-in-jsx-scope': 'off',
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
@@ -27,7 +28,6 @@ module.exports = {
     'no-unused-vars': 'error',
     'no-use-before-define': 'off',
     'react/jsx-props-no-spreading': ['warn'],
-
     camelcase: 'error',
     'spaced-comment': 'error',
     quotes: ['error', 'single'],
