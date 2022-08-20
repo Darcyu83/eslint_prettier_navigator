@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-export default function TestFile() {
+export default function AAAFile() {
   return (
     <View>
-      <Text>TestFile</Text>
+      <Text>AAAFile</Text>
     </View>
   );
 }
