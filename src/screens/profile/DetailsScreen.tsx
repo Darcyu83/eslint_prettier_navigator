@@ -6,7 +6,8 @@ import { RootStackParamList } from '../../../App';
 import { ProfileStackParams } from '../../navigator/ProfileStackNav';
 
 function DetailsScreen({ route }: NativeStackScreenProps<ProfileStackParams, 'Details'>) {
-  const navigation = useNavigation<NativeStackScreenProps<RootStackParamList>['navigation']>();
+  const navigation =
+    useNavigation<NativeStackScreenProps<RootStackParamList, 'Profile'>['navigation']>();
   useEffect(() => () => {
     console.log(`DetailsScreen No.[${route.params.pushed}] detroyed`);
   });
@@ -17,7 +18,12 @@ function DetailsScreen({ route }: NativeStackScreenProps<ProfileStackParams, 'De
         Details Screen in branch1 : screen No. [{route.params.pushed}]
       </Text>
       <Button title='Go to Home' onPress={() => navigation.dispatch(StackActions.popToTop())} />
-      <Button title='Go to MainHome' onPress={() => navigation.navigate('MainHome')} />
+      <Button title='Go to MainHome and MainHome' onPress={() => navigation.navigate('MainHome')} />
+      <Button title='Go to MainHome and ChatHome' onPress={() => navigation.navigate('ChatHome')} />
+      <Button
+        title='Go to SettingScreen1'
+        onPress={() => navigation.navigate('Settings', { screen: 'SettingScreen1' })}
+      />
     </View>
   );
 }

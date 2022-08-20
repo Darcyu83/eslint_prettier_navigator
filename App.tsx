@@ -1,9 +1,9 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import ProfileStackNav from './src/navigator/ProfileStackNav';
-import SettingsStackNav from './src/navigator/SettingsStackNav';
+import ProfileStackNav, { ProfileStackParams } from './src/navigator/ProfileStackNav';
+import SettingStackNav, { SettingStackParams } from './src/navigator/SettingStackNav';
 import TabNav from './src/navigator/TabNav';
 
 interface IProps {}
@@ -12,15 +12,19 @@ export const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
   MainHome: undefined;
-  Profile: undefined;
-  Settings: undefined;
+  ChatHome: undefined;
+  // MainHome: NavigatorScreenParams<BtmTabBarParams>;
+  // ChatHome: NavigatorScreenParams<BtmTabBarParams>;
+  Profile: NavigatorScreenParams<ProfileStackParams>;
+  Settings: NavigatorScreenParams<SettingStackParams>;
 };
 
 function App({}: IProps) {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
-        <RootStack.Screen name='MainHome' component={TabNav} />
+        <RootStack.Screen name='MainHome' component={TabNav} options={{ headerShown: false }} />
+        <RootStack.Screen name='ChatHome' component={TabNav} options={{ headerShown: false }} />
         <RootStack.Screen
           name='Profile'
           component={ProfileStackNav}
@@ -28,7 +32,7 @@ function App({}: IProps) {
         />
         <RootStack.Screen
           name='Settings'
-          component={SettingsStackNav}
+          component={SettingStackNav}
           options={{ headerShown: false }}
         />
       </RootStack.Navigator>
